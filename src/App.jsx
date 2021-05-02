@@ -29,8 +29,8 @@ class App extends React.Component {
         return (
           <tr>
             <td>{item.phoneNumber}</td>
-            <td>{item.vanityWords.join('| ')}</td>
-            <td>{item.timestamp}</td>
+            <td>{item.vanityWords.join(' | ')}</td>
+            <td>{new Date(item.timedate).toLocaleString()}</td>
           </tr>
         )
       });
@@ -42,9 +42,13 @@ class App extends React.Component {
           <h1>Vanity Numbers App</h1>
           <table>
             <thead>
-                <tr>
-                    <th colspan="3">Vanity Numbers Last 5 Callers</th>
-                </tr>
+                
+                    <tr>
+                      <th>Phone Number</th>
+                      <th>Vanity Numbers</th>
+                      <th>Time Stamp</th>
+                    </tr>
+                
             </thead>
             <tbody>
                 {rows}
