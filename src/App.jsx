@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: ''
+      data: []
     }
 
   }
@@ -24,15 +24,17 @@ class App extends React.Component {
 
   }
   render () {
-    let rows = this.state.data.map((item) => {
-      return (
-        <tr>
-          <td>{item.phoneNumber}</td>
-          <td>{item.vanityWords.join('| ')}</td>
-          <td>{item.timestamp}</td>
-        </tr>
-      )
-    });
+    if (this.state.data.length !== 0) {
+      var rows = this.state.data.map((item) => {
+        return (
+          <tr>
+            <td>{item.phoneNumber}</td>
+            <td>{item.vanityWords.join('| ')}</td>
+            <td>{item.timestamp}</td>
+          </tr>
+        )
+      });
+    }
     return (
       <div className="App">
         <header className="App-header">
