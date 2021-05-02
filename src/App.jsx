@@ -27,7 +27,7 @@ class App extends React.Component {
     if (this.state.data.length !== 0) {
       var rows = this.state.data.map((item) => {
         return (
-          <tr>
+          <tr key={item.timedate}>
             <td>{item.phoneNumber}</td>
             <td>{item.vanityWords.join(' | ')}</td>
             <td>{new Date(item.timedate).toLocaleString()}</td>

@@ -40,6 +40,7 @@
 table {
   font-size:large;
   text-align:center;
+  border-collapse: collapse;
 }
 
 td {
@@ -47,6 +48,5 @@ td {
   padding: 10px;
   text-align: left;
   border: 1px solid gray;
-  border-collapse: collapse;
 }
 
